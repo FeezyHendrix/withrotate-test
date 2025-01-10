@@ -4,7 +4,7 @@ const Theme = {
     primaryBlue: "#4661E6",
     primaryDarkBlue: "#4661E6",
     white: "#FFFFFF",
-    lightGray: "#F2F4FF",
+    lightGray: "#F2F4FE",
     veryLightGray: "#F7F8FD",
     secondaryDarkBlue: "#3A4374",
     mediumGray: "#647196",

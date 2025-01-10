@@ -8,7 +8,7 @@ type TPill = {
   onSelect?: (text: string) => void;
 };
 
-export const Pill: React.FC<TPill> = ({ selected, text }) => {
+export const Pill: React.FC<TPill> = ({ selected, text, onSelect }) => {
   return (
     <Button
       size="xs"
@@ -17,6 +17,12 @@ export const Pill: React.FC<TPill> = ({ selected, text }) => {
       borderRadius={Theme.properties.borderRadius}
       bg={selected ? Theme.colors.primaryBlue : Theme.colors.lightGray}
       color={selected ? Theme.colors.white : Theme.colors.primaryBlue}
+      onClick={() => {
+        if (onSelect) {
+          onSelect(text);
+        }
+      }}
+      fontWeight={600}
     >
       {text}
     </Button>

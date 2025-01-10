@@ -8,7 +8,7 @@ type TPaddedBox = {
 
 export const PaddedBox: React.FC<TPaddedBox> = ({ children }) => {
   return (
-    <Box bg={Theme.colors.white} p="4">
+    <Box bg={Theme.colors.white} p="6" borderRadius={Theme.properties.borderRadius}>
       {children}
     </Box>
   );

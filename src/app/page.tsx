@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <PageLayout>
       <Flex gap={10}>
-        <Box width="320px">
+        <Box width="400px">
           <Flex flexDirection="column" gap={10}>
             <GradientCard />
             <PaddedBox>
@@ -69,6 +69,7 @@ export default function Home() {
           </Flex>
         </Box>
         <Box width="100%">
+          <Nav />
           <SuggestionsList suggestions={suggestions} />
         </Box>
       </Flex>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, VStack, HStack, Button, Badge, Text, Heading, Flex } from "@chakra-ui/react";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ChevronUp } from "lucide-react";
 import Theme from "../theme";
 import { Pill } from "./Pill";
 
@@ -19,17 +19,26 @@ const SuggestionsList: React.FC<ISuggestionList> = ({ suggestions }) => {
   return (
     <VStack gap={4} align="stretch" width="100%">
       {suggestions.map((suggestion) => (
-        <Box key={suggestion.id} p={6} borderWidth="1px" borderRadius="md" bg={Theme.colors.white}>
+        <Box key={suggestion.id} p={6} borderRadius="md" bg={Theme.colors.white}>
           <HStack gap={6} align="flex-start">
-            {/* Votes Button */}
-            <Button variant="outline" size="sm" flexDirection="column" py={2} px={3} height="auto">
-              <ArrowUp size={4} />
-              <Text fontWeight="semibold">{suggestion.votes}</Text>
-            </Button>
+            <Box
+              bg={Theme.colors.lightGray}
+              flexDirection="column"
+              alignItems={"center"}
+              justifyContent={"center"}
+              display="flex"
+              borderRadius={Theme.properties.borderRadius}
+              p={4}
+              height="auto"
+            >
+              <ChevronUp size={24} color={Theme.colors.primaryDarkBlue} />
+              <Text color={Theme.colors.secondaryDarkBlue} fontWeight="bold" fontSize="16px">
+                {suggestion.votes}
+              </Text>
+            </Box>
 
-            {/* Suggestion Content */}
             <Box flex="1">
-              <Text fontSize="xl" color={Theme.colors.secondaryDarkBlue} mb={2}>
+              <Text fontSize="xl" color={Theme.colors.secondaryDarkBlue} fontWeight={700} mb={2}>
                 {suggestion.title}
               </Text>
               <Text fontSize="sm" color={Theme.colors.secondaryDarkBlue} mb={4}>

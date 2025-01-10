@@ -1,7 +1,10 @@
 import React from "react";
-import { Box, Flex, Select, Button, Text, Icon, createListCollection } from "@chakra-ui/react";
-import { SelectContent, SelectItem, SelectLabel, SelectRoot, SelectTrigger, SelectValueText } from "./ui/select";
+import { Box, Flex, Button, Text, createListCollection } from "@chakra-ui/react";
+import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValueText } from "./ui/select";
 import { Plus } from "lucide-react";
+import Theme from "../theme";
+import Image from "next/image";
+import badge from "../../../public/badge.svg";
 
 const FeedbackNav = () => {
   const ranks = createListCollection({
@@ -25,43 +28,49 @@ const FeedbackNav = () => {
     ],
   });
   return (
-    <Box bg="#373F68" borderRadius="lg" p="4" color="white">
+    <Box bg="#373F68" borderRadius="lg" p="4" marginBottom={8} color="white">
       <Flex justifyContent="space-between" alignItems="center">
-        {/* Left Section */}
         <Flex alignItems="center" gap="4">
-          <Icon boxSize="5" viewBox="0 0 24 24" fill="none" color="white">
-            <path
-              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
-              fill="currentColor"
-            />
-            <path d="M11 7h2v6h-2zm0 8h2v2h-2z" fill="currentColor" />
-          </Icon>
+          <Image src={badge} alt="" />
           <Text fontWeight="bold" fontSize="lg">
             6 Suggestions
           </Text>
           <Flex alignItems="center">
-            <Text fontSize="sm" mr="2">
-              Sort by:
+            <Text fontSize="sm" width="100px">
+              Sort By:
             </Text>
 
-            {/* <SelectRoot collection={ranks}>
+            <SelectRoot collection={ranks}>
               <SelectTrigger>
                 <SelectValueText placeholder="Most Upvotes" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent bg={Theme.colors.white} width="250px">
                 {ranks.items.map((item) => (
-                  <SelectItem item={item} key={item.value}>
+                  <SelectItem
+                    item={item}
+                    key={item.value}
+                    color={Theme.colors.mediumGray}
+                    _hover={{ bg: Theme.colors.white, color: Theme.colors.primaryPurple }}
+                    cursor="pointer"
+                    py={4}
+                  >
                     {item.label}
                   </SelectItem>
                 ))}
               </SelectContent>
-            </SelectRoot> */}
+            </SelectRoot>
           </Flex>
         </Flex>
 
-        {/* Right Section */}
-        <Button bg="purple.600" _hover={{ bg: "purple.700" }} color="white" borderRadius="md">
-          <Plus />
+        <Button
+          bg={Theme.colors.primaryPurple}
+          fontSize="14px"
+          color="white"
+          px="24px"
+          fontWeight={700}
+          borderRadius={Theme.properties.borderRadius}
+        >
+          <Plus size={14} />
           Add Feedback
         </Button>
       </Flex>

@@ -6,5 +6,5 @@ type TPageLayout = {
 };
 
 export const PageLayout: React.FC<TPageLayout> = ({ children }) => {
-  return <Box p="12">{children}</Box>;
+  return <Box p="24">{children}</Box>;
 };

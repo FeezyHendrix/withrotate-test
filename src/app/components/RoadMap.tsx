@@ -10,13 +10,13 @@ const Roadmap = () => {
   ];
 
   return (
-    <Box bg={Theme.colors.white} p="4" borderRadius="lg" fontFamily="Arial, sans-serif">
+    <Box bg={Theme.colors.white} borderRadius="lg" fontFamily="Arial, sans-serif">
       {/* Header */}
       <Flex justifyContent="space-between" alignItems="center" mb="4">
         <Text fontWeight="bold" fontSize="lg" color={Theme.colors.secondaryDarkBlue}>
           Roadmap
         </Text>
-        <Link color={Theme.colors.primaryBlue} fontWeight="bold" fontSize="sm">
+        <Link textDecoration="underline" color={Theme.colors.primaryBlue} fontWeight="bold" fontSize="sm">
           View
         </Link>
       </Flex>
