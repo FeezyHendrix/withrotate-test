@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, VStack, HStack, Button, Badge, Text, Heading, Flex } from "@chakra-ui/react";
-import { ArrowUp, ChevronUp } from "lucide-react";
+import { ArrowUp, ChevronUp, MessageCircle } from "lucide-react";
 import Theme from "../theme";
 import { Pill } from "./Pill";
 
@@ -45,6 +45,11 @@ const SuggestionsList: React.FC<ISuggestionList> = ({ suggestions }) => {
                 {suggestion.description}
               </Text>
               <Pill selected={false} text={suggestion.type} />
+            </Box>
+
+            <Box>
+              <MessageCircle />
+              <Text>{suggestion.votes}</Text>
             </Box>
           </HStack>
         </Box>
