@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Flex, Button, Text, createListCollection } from "@chakra-ui/react";
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger, SelectValueText } from "./ui/select";
-import { Plus } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import Theme from "../theme";
 import Image from "next/image";
 import badge from "../../../public/badge.svg";
@@ -42,15 +42,22 @@ const FeedbackNav = () => {
 
             <SelectRoot collection={ranks}>
               <SelectTrigger>
-                <SelectValueText placeholder="Most Upvotes" />
+                <SelectValueText _icon={{ fontSize: "25px" }} fontWeight="bold" placeholder="Most Upvotes" />
               </SelectTrigger>
-              <SelectContent bg={Theme.colors.white} width="250px">
+              <SelectContent
+                padding="0"
+                boxShadow="0px 10px 40px -7px #373F6859"
+                divideY="1px"
+                bg={Theme.colors.white}
+                width="250px"
+              >
                 {ranks.items.map((item) => (
                   <SelectItem
                     item={item}
                     key={item.value}
                     color={Theme.colors.mediumGray}
                     _hover={{ bg: Theme.colors.white, color: Theme.colors.primaryPurple }}
+                    _selected={{ bg: Theme.colors.white, color: Theme.colors.primaryPurple }}
                     cursor="pointer"
                     py={4}
                   >

@@ -10,9 +10,14 @@ const Theme = {
     mediumGray: "#647196",
     accentOrange: "#F49F85",
     skyBlue: "#62BCFA",
+    mutedLavenderBlue: "#CDD2EE",
   },
   properties: {
     borderRadius: "10px",
+  },
+  breakpoints: {
+    mobile: "480px",
+    tab: "768px",
   },
 };
 

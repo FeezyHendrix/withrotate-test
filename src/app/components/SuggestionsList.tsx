@@ -3,6 +3,7 @@ import { Box, VStack, HStack, Button, Badge, Text, Heading, Flex } from "@chakra
 import { ArrowUp, ChevronUp, MessageCircle } from "lucide-react";
 import Theme from "../theme";
 import { Pill } from "./Pill";
+import { TbMessageCircleFilled } from "react-icons/tb";
 
 type Suggestion = {
   id: number;
@@ -10,6 +11,7 @@ type Suggestion = {
   description: string;
   type: string;
   votes: number;
+  messages: number;
 };
 
 type ISuggestionList = {
@@ -20,12 +22,13 @@ const SuggestionsList: React.FC<ISuggestionList> = ({ suggestions }) => {
     <VStack gap={4} align="stretch" width="100%">
       {suggestions.map((suggestion) => (
         <Box key={suggestion.id} p={6} borderRadius="md" bg={Theme.colors.white}>
-          <HStack gap={6} align="flex-start">
+          <HStack gap={6}>
             <Box
               bg={Theme.colors.lightGray}
               flexDirection="column"
               alignItems={"center"}
               justifyContent={"center"}
+              alignSelf={"flex-start"}
               display="flex"
               borderRadius={Theme.properties.borderRadius}
               p={4}
@@ -48,8 +51,12 @@ const SuggestionsList: React.FC<ISuggestionList> = ({ suggestions }) => {
             </Box>
 
             <Box>
-              <MessageCircle />
-              <Text>{suggestion.votes}</Text>
+              <Flex gap="2">
+                <TbMessageCircleFilled size={25} color={Theme.colors.mutedLavenderBlue} />
+                <Text fontWeight="bold" color={Theme.colors.secondaryDarkBlue}>
+                  {suggestion.votes}
+                </Text>
+              </Flex>
             </Box>
           </HStack>
         </Box>

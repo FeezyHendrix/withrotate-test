@@ -17,6 +17,7 @@ export default function Home() {
       description: "Easier to search for solutions based on a specific stack.",
       type: "Enhancement",
       votes: 2,
+      messages: 2,
     },
     {
       id: 99,
@@ -24,6 +25,7 @@ export default function Home() {
       description: "It would help people with light sensitivities and who prefer dark mode.",
       type: "Feature",
       votes: 4,
+      messages: 3,
     },
     {
       id: 65,
@@ -31,6 +33,7 @@ export default function Home() {
       description: "Challenge-specific Q&A would make for easy reference.",
       type: "Feature",
       votes: 1,
+      messages: 3,
     },
     {
       id: 51,
@@ -38,6 +41,7 @@ export default function Home() {
       description: "Images and screencasts can enhance comments on solutions.",
       type: "Enhancement",
       votes: 2,
+      messages: 1,
     },
     {
       id: 42,
@@ -45,6 +49,7 @@ export default function Home() {
       description: "Stay updated on comments and solutions other people post.",
       type: "Feature",
       votes: 3,
+      messages: 3,
     },
     {
       id: 3,
@@ -52,6 +57,7 @@ export default function Home() {
       description: "Challenge preview images are missing when you apply a filter.",
       type: "Bug",
       votes: 0,
+      messages: 2,
     },
   ];
   return (
